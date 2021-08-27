@@ -4,10 +4,10 @@ const urL = require('../models/schema');
 
 router.get('/:code', async (req, res) => {
   try {
-    const url = await urL.findOne({ urlCode: req.params.code });
+    const url = await urL.findOne({ Ucode: req.params.code });
 
     if (url) {
-      return res.redirect(url.longUrl);
+      return res.redirect(url.longU);
     } else {
       return res.status(404).json('No Url found');
     }
